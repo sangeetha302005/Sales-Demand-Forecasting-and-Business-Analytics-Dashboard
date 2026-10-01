@@ -4,9 +4,12 @@
 
 🔗 **GitHub Repository:** [https://github.com/sangeetha302005/Sales-Demand-Forecasting-and-Business-Analytics-Dashboard](https://github.com/sangeetha302005/Sales-Demand-Forecasting-and-Business-Analytics-Dashboard)
 
+🌐 **Live Demo:** [https://sales-demand-forecasting-dashboard.streamlit.app](https://sales-demand-forecasting-dashboard.streamlit.app)
+
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red?logo=streamlit)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sales-demand-forecasting-dashboard.streamlit.app)
 
 ### 📂 Upload Your Own Data!
 This dashboard supports **CSV and Excel file uploads**. You can upload your own sales dataset directly through the sidebar — the app will automatically detect columns, clean the data, and generate all charts, forecasts, and insights for your data.
