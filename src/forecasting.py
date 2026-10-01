@@ -8,22 +8,19 @@ warnings.filterwarnings('ignore')
 
 
 def _normalize_freq(freq: str) -> str:
-    """Normalize frequency aliases for pandas >= 2.2 / 3.x compatibility.
+    """Normalize frequency aliases for cross-pandas compatibility.
     
-    Pandas 3.x removed legacy offset aliases like 'M', 'Q', 'Y'.
-    This helper maps them to the new equivalents.
+    Pandas 3.x removed 'M','Q','Y'; pandas 2.x doesn't know 'ME','QE','YE'.
+    This detects the version and maps to the correct alias.
     """
-    _FREQ_MAP = {
-        'M': 'ME',      # Month End
-        'Q': 'QE',      # Quarter End
-        'Y': 'YE',      # Year End
-        'A': 'YE',      # Annual → Year End
-        'BM': 'BME',    # Business Month End
-        'BQ': 'BQE',    # Business Quarter End
-        'BY': 'BYE',    # Business Year End
-        'BA': 'BYE',
-    }
-    return _FREQ_MAP.get(freq, freq)
+    pd_major = int(pd.__version__.split('.')[0])
+    if pd_major >= 3:
+        # pandas 3.x: use new aliases
+        _MAP = {'M': 'ME', 'Q': 'QE', 'Y': 'YE', 'A': 'YE'}
+    else:
+        # pandas 2.x: use legacy aliases
+        _MAP = {'ME': 'M', 'QE': 'Q', 'YE': 'Y'}
+    return _MAP.get(freq, freq)
 
 
 def prepare_time_series(df: pd.DataFrame, col_map: Dict, freq: str = 'ME') -> Optional[pd.DataFrame]:
