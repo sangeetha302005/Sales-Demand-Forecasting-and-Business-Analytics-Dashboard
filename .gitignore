@@ -1,0 +1,47 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+*.env
+
+# Temporary
+*.tmp
+*.temp
+*.log
+
+# Generated
+generate_data.py
+outputs/*.csv
+outputs/*.png
+outputs/*.html
+
+# Jupyter
+.ipynb_checkpoints/
