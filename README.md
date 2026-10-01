@@ -2,9 +2,14 @@
 
 > A comprehensive data science project for analyzing historical sales data, generating business insights, forecasting future demand, and presenting everything in an interactive Streamlit dashboard.
 
+🔗 **GitHub Repository:** [https://github.com/sangeetha302005/Sales-Demand-Forecasting-and-Business-Analytics-Dashboard](https://github.com/sangeetha302005/Sales-Demand-Forecasting-and-Business-Analytics-Dashboard)
+
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red?logo=streamlit)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+### 📂 Upload Your Own Data!
+This dashboard supports **CSV and Excel file uploads**. You can upload your own sales dataset directly through the sidebar — the app will automatically detect columns, clean the data, and generate all charts, forecasts, and insights for your data.
 
 ---
 
@@ -258,12 +263,24 @@ The dashboard will open automatically in your default browser at `http://localho
 5. **Explore forecasts** on the Demand Forecasting page
 6. **Review insights** on the Business Insights page
 
-## 🔄 How to Use Your Own Dataset
+## 📂 How to Use Your Own Dataset
 
-### Option 1: Upload via Dashboard
-1. Select "Upload CSV" or "Upload Excel" in the sidebar
-2. Upload your file
-3. The application will automatically detect and adapt to your column structure
+### Option 1: Upload via Dashboard (Recommended)
+1. Launch the dashboard with `streamlit run app.py`
+2. In the sidebar under **Data Source**, select **"Upload CSV"** or **"Upload Excel"**
+3. Click **Browse files** and select your sales data file
+4. The app will automatically:
+   - Detect your column names and map them to the expected fields
+   - Show a data summary (rows, columns, missing values, duplicates)
+   - Clean the data (handle missing values, fix types, remove duplicates)
+   - Display a log of all cleaning operations performed
+   - Generate all charts, forecasts, and insights from your uploaded data
+
+**Supported file formats:**
+| Format | Extensions |
+|--------|-----------|
+| CSV | `.csv` |
+| Excel | `.xlsx`, `.xls` |
 
 ### Option 2: Replace Sample File
 1. Replace `data/sample_sales_data.csv` with your own CSV file
